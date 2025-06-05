@@ -42,7 +42,7 @@
 
 ## Live Demo
 
-[Play Cog Master (Hosted Prototype)](https://your-demo-link)
+[Play Cog Game (Hosted Prototype)](https://ceryneianhinds.neocities.org/Games/cogMaster/)
 
 ## Getting Started
 

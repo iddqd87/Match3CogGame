@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CogMaster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">Cogz</h1>
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Score:</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Moves:</span>
+                    <span class="stat-value" id="moves">0</span>
+                </div>
+                <div class="stat-item multiplier-display">
+                    <span class="stat-label">Multiplier:</span>
+                    <span class="stat-value" id="multiplier">1.0x</span>
+                </div>
+            </div>
+        </header>
+        <main class="game-main">
+            <div class="game-board-container">
+                <canvas id="gameBoard" width="640" height="640"></canvas>
+                <div class="drag-overlay" id="dragOverlay"></div>
+            </div>
+
+            <div class="settings-panel" id="settingsPanel">
+                <div class="settings-header">
+                    <h3>Settings</h3>
+                    <button class="settings-toggle" id="settingsToggle">
+                        <span class="toggle-icon">⚙️</span>
+                    </button>
+                </div>
+                
+                <div class="settings-content" id="settingsContent">
+                    <div class="setting-group">
+                        <label class="setting-label">Match Length</label>
+                        <select class="form-control setting-select" id="matchLength">
+                            <option value="3" selected>3 pieces</option>
+                            <option value="4">4 pieces</option>
+                            <option value="5">5+ pieces</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label class="setting-label">Gear Percentage</label>
+                        <select class="form-control setting-select" id="gearPercentage">
+                            <option value="10">10%</option>
+                            <option value="20" selected>20%</option>
+                            <option value="30">30%</option>
+                            <option value="40">40%</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label class="setting-label">Base Score</label>
+                        <select class="form-control setting-select" id="baseScore">
+                            <option value="100" selected>100 points</option>
+                            <option value="200">200 points</option>
+                            <option value="500">500 points</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label class="setting-label">Animation Speed</label>
+                        <select class="form-control setting-select" id="animationSpeed">
+                            <option value="slow">Slow</option>
+                            <option value="normal" selected>Normal</option>
+                            <option value="fast">Fast</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label class="setting-label">Grid Size</label>
+                        <select class="form-control setting-select" id="gridSize">
+                            <option value="6">6x6</option>
+                            <option value="8" selected>8x8</option>
+                            <option value="10">10x10</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label class="setting-label"> Effects</label>
+                        <div>
+                            <label><input type="checkbox" id="effectShake" checked> Screen Shake</label><br>
+                            <label><input type="checkbox" id="effectParticles" checked> Particles</label><br>
+                            <label><input type="checkbox" id="effectFlash" checked> Flash</label>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <button class="btn btn--secondary btn--full-width" id="resetGame">
+                            Reset Game
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="match-feedback" id="matchFeedback"></div>
+        <div class="particle-container" id="particleContainer"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
